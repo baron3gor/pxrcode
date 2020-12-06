@@ -13,9 +13,9 @@ also a support forum on which you can get help if you have problems.
 /******************************************************************
 SUPPORT, ISSUES, & QUESTIONS
 ******************************************************************/
-Support Forum - http://pixrow.com/
+Support Forum - http://pixrow.co/
 /*===*/
-Knowledge Base - http://pixrow.com/
+Knowledge Base - http://pixrow.co/
 /*===*/
 
 
