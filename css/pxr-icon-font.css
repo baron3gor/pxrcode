@@ -1,0 +1,50 @@
+@font-face {
+  font-family: 'pxriconfont';
+  src:url('../fonts/pxriconfont/pxriconfont.eot');
+  src:url('../fonts/pxriconfont/pxriconfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/pxriconfont/pxriconfont.woff') format('woff'),
+    url('../fonts/pxriconfont/pxriconfont.ttf') format('truetype'),
+    url('../fonts/pxriconfont/pxriconfont.svg#pxriconfont') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.icon-pxr-left-arrow, .icon-pxr-right-arrow, .icon-playicon, .icon-list4, .icon-grid, .icon-list {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'pxriconfont';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-pxr-left-arrow:before {
+  content: "\e904";
+  color: #ff6d24;
+}
+.icon-pxr-right-arrow:before {
+  content: "\e905";
+  color: #ff6d24;
+}
+.icon-playicon:before {
+  content: "\e903";
+  color: #ff6d24;
+}
+.icon-list4:before {
+  content: "\e902";
+  color: #ff6d24;
+}
+.icon-grid:before {
+  content: "\e900";
+  color: #ff6d24;
+}
+.icon-list:before {
+  content: "\e901";
+  color: #ff6d24;
+}
