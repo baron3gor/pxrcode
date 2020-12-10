@@ -6,9 +6,9 @@
 global $pxr_red_option; ?>
 
 <div id="pxr-header-area" class="pxr-header-area">
-	<div class="pxr-wrapper pxr-header-title-wrapper">
-		<div class="pxr-page-heading-heading">
-			<h1 class="pxr-page-header-title">
+	<div class="pxr-header-heading pxr-wrapper">
+		<div class="pxr-header-heading__wrapper">
+			<h1 class="pxr-header-heading__title">
 				
 			</h1>
 		</div>

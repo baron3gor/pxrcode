@@ -128,23 +128,22 @@
 		margin: auto;
 		padding: 0 20px;
 	}
-}
 
-
-.pxr-theme-body-class{
-	.pxr-header-top-line{
-		display: flex;
-	    align-items: center;
-	    justify-content: space-around;
-
-	    .pxr-nav-wrapper{
-	    	.pxr-navigation-list{
-	    		display: flex;
-	    		li{
-	    			margin: 0 10px;
-	    		}
-	    	}
-	    }
+	.pxr-header-wrapper {
+		.pxr-header-top-line {
+			&__wrapper {
+				display: flex;
+			    align-items: center;
+			    justify-content: space-around;
+			}
+			&__nav {
+				.pxr-navigation-list {
+					display: flex;
+		    		li{
+		    			margin: 0 10px;
+		    		}
+				}
+			}
+		}
 	}
 }
-

@@ -9,11 +9,11 @@
     <?php wp_body_open(); ?>
     <div class="pxr-main-site-wrapper">
         <div class="pxr-main-site-container"><!-- Wrapper start -->
-            <div class="pxr-main-site cf"><!-- Main Container Start -->
+            <div class="pxr-main-site"><!-- Main Container Start -->
                 <header class="pxr-header-wrapper">
-                    <div class="pxr-header-top-line-wrapper">
-                        <div class="pxr-header-top-line pxr-megamenu-container">
-                            <div class="pxr-top-line-logo-wrapper">
+                    <div class="pxr-header-top-line">
+                        <div class="pxr-header-top-line__wrapper pxr-megamenu-container">
+                            <div class="pxr-header-top-line__logo">
                                 <a href="<?php echo esc_url(home_url("/")); ?>">
                                     <?php if(!empty($pxr_red_option['logo-img']['url'])) { ;?>
                                         <img src="<?php echo esc_url($pxr_red_option['logo-img']['url']); ?>" alt="<?php the_title(); ?>" srcset="<?php echo esc_url($pxr_red_option['logo-img']['url']) . ' 2x'; ?>">
@@ -30,14 +30,14 @@
                                     'menu_class'      => 'pxr-navigation-list',
                                     'walker'          => new pxrframework_menu_walker,
                                     'container'       => 'nav',
-                                    'container_class' => 'pxr-nav-wrapper',
+                                    'container_class' => 'pxr-header-top-line__nav pxr-nav-wrapper',
                                     'items_wrap'      => '<ul class="%2$s">%3$s</ul>',
                                     'container_id'    => '',
                                 )); ?>
                             <?php } ?>
-                            <div class="pxr-top-line-icons-wrapper">
-                                <div class="pxr-top-line-menu-icon">
-                                    <span class="pxr-top-line-sidemenu-icon">
+                            <div class="pxr-header-top-line__icon pxr-top-line-menu">
+                                <div class="pxr-top-line-menu__wrapper">
+                                    <span class="pxr-top-line-menu__icon">
                                         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                          width="24px" height="24px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve">
                                         <circle fill="#4e413b" cx="4" cy="4" r="2"/>
