@@ -7,11 +7,9 @@
 	    <div class="pxr-page-author-wrapper pxr-wrapper pxr-page-inner">
 	        <div class="pxr-page-author">     
 	        	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-		            <article <?php post_class() ?>>
-		                <div class="pxr-post-container">                                
-		                    <?php get_template_part( '/post-contents/content', get_post_format() ); ?>
-		                </div>
-		            </article>
+		            
+	        		<?php get_template_part( '/post-contents/article-post', get_post_format() ); ?>
+		            
 		        <?php endwhile; else: ?>
 		            <?php get_template_part('partials/notfound')?>
 		        <?php endif; ?>

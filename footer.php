@@ -1,4 +1,3 @@
-<?php global $pxr_red_option; ?>
 			</div>
 		</div>
 	</div> <!-- Main Container End -->

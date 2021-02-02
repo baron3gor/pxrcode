@@ -36,9 +36,11 @@ if (!defined('PXR_THEME_URL')){
  ****************************************************************/
 
 require_once (PXRTHEME_PATH. '/front.php');
+require_once (PXRTHEME_PATH. '/functions/system.php');
+require_once (PXRTHEME_PATH. '/functions/ctlg.php');
 require_once (PXRTHEME_PATH. '/functions/general.php');
 require_once (PXRTHEME_PATH. '/functions/custom-fnc.php');
 require_once (PXRTHEME_PATH. '/functions/class-tgm-plugin-activation.php');
 require_once (PXRTHEME_PATH. '/functions/load-more-btn.php');
-require_once (PXRTHEME_PATH. '/functions/gallery-sort.php');
+require_once (PXRTHEME_PATH. '/functions/sorter.php');
 

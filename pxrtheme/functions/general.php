@@ -26,11 +26,6 @@ if ( !function_exists( 'pxr_register_required_plugins' ) ) {
             $plugins = array(
 
                 array(
-                    'name'      => 'Redux Framework',
-                    'slug'      => 'redux-framework',
-                    'required'  => true,
-                ), 
-                array(
                     'name'             => 'CMB2',
                     'slug'             => 'cmb2',
                     'force_activation' => false,

@@ -4,89 +4,68 @@ jQuery(function($){
 
     $.fn.pxr_load_more_gl = function() {
 
-        var $this         = $(this),
-            $getContainer = $this.find('.content-wrapper-gallery'),
-            getStyle      = $getContainer.data('btn'),
-            getMaxPage    = $getContainer.data('maxpage'), 
-            getTabs       = $this.find('.gallery-tab-item'),
-            getPage       = 2;            
+        var $this    = $(this),
+            sorter   = $this.find('.pxr-ctlg-section__sorter'),
+            articles = $this.find('.pxr-ctlg-section__articles'),
+            maxPage  = articles.data('maxpage'), 
+            page     = 2,
+            loading  = false;            
 
-        if(getMaxPage > 1) {
-            $getContainer.after('<div class="loadmore-container"><div class="load-wrapper"><div class="loadmore_gallery fade-animation btn-style' + getStyle + '" id="true_loadmore"><span>' + pxrloadmore.button_text + '</span>' + '<div class="overlay"></div>' + '</div></div></div>');
+        if(maxPage > 1) {
+            articles.after('<div class="loadmore-container"><div class="load-wrapper"><div class="loadmore_gallery fade-animation"><span>' + pxrloadmore.button_text + '</span>' + '</div></div></div>');
         }
 
-        getTabs.on('click', function(){
-            getPage = 2;
+        sorter.on('click', function(){
+            page = 2;
         });
-
-                
+        
         $this.on('click', '.loadmore_gallery', function(){
 
-            var $getContainer = $this.find('.content-wrapper-gallery'),
-                getStyle      = $getContainer.data('btn'),                
-                getPostPage   = $getContainer.data('perpage'),
-                getMaxPage    = $getContainer.data('maxpage'),
-                loading       = false;
+            var button        = $this.find('.loadmore_gallery'),
+                buttonWrapper = button.parent(),
+                termid        = $this.find('.pxr-ctlg-section__articles').data('termid');
 
-            var getBtn = $this.find('.loadmore_gallery'),
-                getBtnParent = getBtn.parent();
-
-            getBtnParent.css('opacity', '0');
+            buttonWrapper.animate({opacity: '0'}, 100);
 
             if(!loading){
                 loading = true;
 
-                var getCat = $getContainer.parent().parent().find('.gallery-tab-item.current_gallery').attr('data-id'),
-                    data = {
-                        action: 'pxr_ajax_load_more',
-                        nonce: pxrloadmore.nonce,
-                        page: getPage,
-                        query: pxrloadmore.query,
-                        cat: getCat,
-                        perpage: getPostPage,
-                        style: getStyle,
-                    };
+                var data = {
+                    action: 'pxr_ajax_load_more',
+                    nonce: pxrloadmore.nonce,
+                    page: page,
+                    termid: termid,
+                    query: pxrloadmore.query,
+                };
             };
 
             $.post(pxrloadmore.url, data, function (res) {
                 if (res.success) {  
 
                     var $content = $(res.data),
-                        $grid = $getContainer.masonry({
-                            // options
-                            itemSelector: '.grid-gallery',
-                            gutter: '.gutter-gallery',
-                        });
+                        content  = $this.find('.pxr-ctlg-section__content');
 
-                    $grid.append( $content ).imagesLoaded(function(){
+                    content.find('.pxr-ctlg-section__articles >*:last-child').after($content);
 
-                        $grid.masonry( 'appended', $content , true);
+                    var maxPage       = content.find('.pxr-ctlg-section__articles').data('maxpage'),
+                        button        = $this.find('.loadmore_gallery'),
+                        buttonWrapper = button.parent();
 
-                        var getMaxPage = $getContainer.data('maxpage'),
-                            getBtn = $this.find('.loadmore_gallery'),
-                            getBtnContainer = getBtn.parent().parent();
+                    //Hide the Load More button if no more posts to load
+                    if (page == maxPage) {
+                        button.hide();
+                    } else {
+                       var button = buttonWrapper.html('<div class="loadmore_gallery fade-animation"><span>' + pxrloadmore.button_text + '</span>' + '</div>');
+                       button.animate({opacity: '1'}, 100);
+                    }
 
-                        //Hide the Load More button if no more posts to load
-                        if (getPage == getMaxPage) {
-                            getBtn.hide();
-                        } else {
-                            getBtnContainer.html('<div class="load-wrapper"><div class="loadmore_gallery fade-animation btn-style' + getStyle + '" id="true_loadmore"><span>' + pxrloadmore.button_text + '</span>' + '<div class="overlay"></div>' + '</div></div>');
-
-                            if(getBtnContainer.find('.loadmore_gallery.fade-animation').offset().top < $window.scrollTop() + ($window.height() / 10)*8 ) {
-                                getBtnContainer.find('.loadmore_gallery.fade-animation').addClass('loaded-animation');
-                            }
-                        }
-
-                        getPage = getPage + 1;
-
-                    });
+                    page = page + 1;
                      
-                    var getImg = $getContainer.find('.content-wrapper-img'); 
+                    var fadeAnimation = content.find('.fade-animation'); 
                     setTimeout(function(){
-                        getImg.each(function(){
+                        fadeAnimation.each(function(){
                             if($(this).offset().top < $window.scrollTop() + ($window.height() / 10)*8  ) {
                                 $(this).addClass('loaded-animation');
-                                $(this).find('.fade-image').addClass('loaded-img-wrapper');
                             }
                         });
                     }, 200)                   
@@ -102,8 +81,8 @@ jQuery(function($){
         })      
     }
 
-    if($('.projects-gallery-wrapper').length) {
-        $('.projects-gallery-wrapper').each(function(){
+    if($('.pxr-ctlg-section').length) {
+        $('.pxr-ctlg-section').each(function(){
             $(this).pxr_load_more_gl();
         });
     }

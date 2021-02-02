@@ -12,8 +12,3 @@ if (!defined('PXRTHEME_PATH')){
 
 require_once PXRTHEME_PATH . '/init.php';
 
-load_theme_textdomain( 'pxrcode', get_template_directory() . '/lang' );
-$locale = get_locale();
-$locale_file = get_template_directory() . "/lang/$locale.php";
-if ( is_readable($locale_file) )
-    require_once($locale_file);
