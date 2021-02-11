@@ -1,35 +1,31 @@
 @import 'elements.less';
 
-
-@brown: #4e413b ;
-
+@brown: #4e413b;
 
 /**
  * Theme Styles
  */
- 
-.pxr-theme-body-class{
-  	.pxr-wrapper{
-		max-width: 1100px;
-		margin: auto;
-		padding: 0 20px;
-	}
-	.pxr-header-wrapper {
-		.pxr-header-top-line, .pxr-sticky-top-line {
-			&__wrapper {
-				display: flex;
-			    align-items: center;
-			    justify-content: space-between;
-			}
-			&__nav {
-				.pxr-header-navigation-list, .pxr-sticky-navigation-list {
-					display: flex;
-		    		li{
-		    			margin: 0 10px;
-		    		}
-				}
-			}
-		}
-	}
-}
 
+.pxr-theme-body-class {
+   .pxr-wrapper {
+      max-width: 1100px;
+      margin: auto;
+      padding: 0 20px;
+   }
+   .pxr-header-wrapper {
+      .pxr-header-top-line,
+      .pxr-sticky-top-line {
+         &__wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+         }
+         &__nav {
+            .pxr-header-navigation-list,
+            .pxr-sticky-navigation-list {
+               display: flex;
+            }
+         }
+      }
+   }
+}

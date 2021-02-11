@@ -64,9 +64,9 @@ jQuery(function($){
                     var fadeAnimation = content.find('.fade-animation'); 
                     setTimeout(function(){
                         fadeAnimation.each(function(){
-                            if($(this).offset().top < $window.scrollTop() + ($window.height() / 10)*8  ) {
-                                $(this).addClass('loaded-animation');
-                            }
+                           if($(this).offset().top < $window.scrollTop() + ($window.height() / 10)*8  ) {
+                               $(this).addClass('loaded-animation');
+                           }
                         });
                     }, 200)                   
                     
