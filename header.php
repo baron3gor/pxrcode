@@ -55,15 +55,9 @@
                      <div class="pxr-header-top-line__icon">
                         <span class="pxr-header-top-line__btn">
                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve">
-                              <circle fill="#4e413b" cx="4" cy="4" r="2" />
-                              <circle fill="#4e413b" cx="12" cy="4" r="2" />
-                              <circle fill="#4e413b" cx="20" cy="4" r="2" />
                               <circle fill="#4e413b" cx="4" cy="12" r="2" />
                               <circle fill="#4e413b" cx="12" cy="12" r="2" />
                               <circle fill="#4e413b" cx="20" cy="12" r="2" />
-                              <circle fill="#4e413b" cx="4" cy="20" r="2" />
-                              <circle fill="#4e413b" cx="12" cy="20" r="2" />
-                              <circle fill="#4e413b" cx="20" cy="20" r="2" />
                            </svg>
                         </span>
                      </div>
@@ -91,15 +85,9 @@
                      <div class="pxr-sticky-top-line__icon">
                         <span class="pxr-sticky-top-line__btn">
                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve">
-                              <circle fill="#4e413b" cx="4" cy="4" r="2" />
-                              <circle fill="#4e413b" cx="12" cy="4" r="2" />
-                              <circle fill="#4e413b" cx="20" cy="4" r="2" />
                               <circle fill="#4e413b" cx="4" cy="12" r="2" />
                               <circle fill="#4e413b" cx="12" cy="12" r="2" />
                               <circle fill="#4e413b" cx="20" cy="12" r="2" />
-                              <circle fill="#4e413b" cx="4" cy="20" r="2" />
-                              <circle fill="#4e413b" cx="12" cy="20" r="2" />
-                              <circle fill="#4e413b" cx="20" cy="20" r="2" />
                            </svg>
                         </span>
                      </div>
