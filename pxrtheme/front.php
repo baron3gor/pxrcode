@@ -13,9 +13,6 @@ if (!function_exists('pxr_enqueue_styles')) {
 
       //Icon fonts
       wp_register_style('pxr-font-awesome', PXR_THEME_URL . '/css/font-awesome.min.css', array(), PXR_THEME_VERSION, 'all');
-      wp_register_style('pxr-elegant-icons', PXR_THEME_URL . '/css/elegant-icons.css', array(), PXR_THEME_VERSION, 'all');
-      wp_register_style('pxr-ion-icons', PXR_THEME_URL . '/css/ionicons.min.css', array(), PXR_THEME_VERSION, 'all');
-      wp_register_style('pxr-themify-icons', PXR_THEME_URL . '/css/themify-icons.css', array(), PXR_THEME_VERSION, 'all');
       wp_register_style('pxr-icon-font', PXR_THEME_URL . '/css/pxr-icon-font.css', array(), PXR_THEME_VERSION, 'all');
 
       //Register libs
@@ -32,9 +29,6 @@ if (!function_exists('pxr_enqueue_styles')) {
       //wp_enqueue_style('pxr-magnific-css');
       //wp_enqueue_style('pxr-swiper-css');
       //wp_enqueue_style('pxr-font-awesome');
-      //wp_enqueue_style('pxr-elegant-icons');
-      //wp_enqueue_style('pxr-ion-icons');
-      //wp_enqueue_style('pxr-themify-icons');
 
    }
 }
@@ -92,7 +86,6 @@ if (!function_exists('pxr_enqueue_scripts')) {
  * Preload fonts
  */
 if (!function_exists('pxr_preload_enqueue_scripts')) {
-
    function pxr_preload_enqueue_scripts()
    {
       wp_enqueue_style('pxr-icon-handle', PXR_THEME_URL . '/fonts/pxriconfont/pxriconfont.woff', array(), null);
@@ -102,7 +95,6 @@ if (!function_exists('pxr_preload_enqueue_scripts')) {
 }
 
 if (!function_exists('pxr_font_loader_filter')) {
-
    function pxr_font_loader_filter($html, $handle)
    {
 
@@ -119,7 +111,6 @@ if (!function_exists('pxr_font_loader_filter')) {
             );
          }
       }
-
       return $html;
    }
 
@@ -134,7 +125,6 @@ if (!function_exists('pxr_font_loader_filter')) {
 if (!function_exists('pxr_add_defer_attribute')) {
    function pxr_add_defer_attribute($tag, $handle)
    {
-
       $handles = array(
          'pxr-scripts',
       );
@@ -144,7 +134,6 @@ if (!function_exists('pxr_add_defer_attribute')) {
             return str_replace(' src', ' defer="defer" src', $tag);
          }
       }
-
       return $tag;
    }
 
