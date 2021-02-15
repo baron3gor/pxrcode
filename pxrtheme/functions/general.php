@@ -14,6 +14,40 @@ add_action('init', 'pxr_load_textdomain', 1);
 
 
 /**
+ * Theme Body Class
+ */
+if (!function_exists('pxr_wp_body_classes')) {
+   function pxr_wp_body_classes($classes)
+   {
+
+      $classes[] = 'pxr-theme-body-class';
+
+      return $classes;
+   }
+   add_filter('body_class', 'pxr_wp_body_classes');
+}
+
+
+/**
+ * Add class to articles
+ */
+if (!function_exists('pxr_theme_slug_post_classes')) {
+   function pxr_theme_slug_post_classes($classes, $class, $post_id)
+   {
+
+      if (is_single() || is_singular('catalogue')) {
+         $classes[] = 'pxr-single-article';
+      } else {
+         $classes[] = 'fade-animation pxr-article';
+      }
+
+      return $classes;
+   }
+   add_filter('post_class', 'pxr_theme_slug_post_classes', 10, 3);
+}
+
+
+/**
  * Init TGM Activation
  */
 

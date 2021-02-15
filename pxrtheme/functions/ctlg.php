@@ -43,8 +43,7 @@ if (!function_exists('pxr_ctlg_args')) {
  */
 if (!function_exists('pxr_ctlg_body')) {
    function pxr_ctlg_body($pxr_loop, $maxpage)
-   {
-?>
+   { ?>
 
       <div data-termid="0" class="pxr-ctlg-section__articles" data-maxpage="<?php echo esc_attr($maxpage, 'pxrcode'); ?>">
 
