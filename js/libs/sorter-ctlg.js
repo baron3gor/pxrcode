@@ -1,21 +1,21 @@
 jQuery(function ($) {
 
-   var $window = $(window);
+   const $window = $(window);
 
    $.fn.pxr_sorter = function () {
 
-      var $this = $(this),
-         loading = false;
+      const $this = $(this);
+      let loading = false;
 
       $this.on('click', '.pxr-ctlg-section__sorter', function () {
 
-         var termid = $(this).data('termid');
+         const termid = $(this).data('termid');
 
          function pxr_sorter_load(callback) {
 
             if (!loading) {
                loading = true;
-               var data = {
+               const data = {
                   action: 'pxr_ajax_sorter',
                   nonce: pxrsorter.nonce,
                   query: pxrsorter.query,
@@ -24,12 +24,12 @@ jQuery(function ($) {
                $.post(pxrsorter.url, data, function (res) {
 
                   if (res.success) {
-                     var $content = $(res.data),
+                     const $content = $(res.data),
                         content = $this.find('.pxr-ctlg-section__content');
 
                      content.html($content);
 
-                     var articles = $this.find('.pxr-ctlg-section__articles'),
+                     const articles = $this.find('.pxr-ctlg-section__articles'),
                         maxPage = articles.data('maxpage');
 
                      articles.attr('data-termid', termid);
@@ -50,7 +50,7 @@ jQuery(function ($) {
             }
          }
 
-         var $container = $this.find('.pxr-ctlg-section__wrapper'),
+         const $container = $this.find('.pxr-ctlg-section__wrapper'),
             fadeAnimation = $container.find('.fade-animation');
 
          if (fadeAnimation.css('opacity') == 1) {
@@ -60,7 +60,7 @@ jQuery(function ($) {
 
             pxr_sorter_load(function () {
 
-               var fadeAnimation = $container.find('.fade-animation');
+               const fadeAnimation = $container.find('.fade-animation');
                fadeAnimation.each(function () {
                   if ($(this).offset().top < $window.scrollTop() + ($window.height() / 10) * 8) {
                      $(this).addClass('loaded-animation');

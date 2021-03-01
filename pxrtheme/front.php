@@ -45,7 +45,7 @@ if (!function_exists('pxr_enqueue_scripts')) {
    {
 
       // add html5 for old browsers.
-      wp_register_script('html5-shim', 'http://html5shim.googlecode.com/svn/trunk/html5.js', array('jquery'), PXR_THEME_VERSION, false);
+      wp_register_script('html5-shim', 'https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js', array('jquery'), PXR_THEME_VERSION, false);
 
       //Libs Register
       wp_register_script('pxr-velocity-js', PXR_THEME_URL . '/js/libs/velocity.min.js', array('jquery'), PXR_THEME_VERSION, true);
@@ -82,60 +82,60 @@ if (!function_exists('pxr_enqueue_scripts')) {
 
 
 
-/**
- * Preload fonts
- */
-if (!function_exists('pxr_preload_enqueue_scripts')) {
-   function pxr_preload_enqueue_scripts()
-   {
-      wp_enqueue_style('pxr-icon-handle', PXR_THEME_URL . '/fonts/pxriconfont/pxriconfont.woff', array(), null);
-   }
+// /**
+//  * Preload fonts
+//  */
+// if (!function_exists('pxr_preload_enqueue_scripts')) {
+//    function pxr_preload_enqueue_scripts()
+//    {
+//       wp_enqueue_style('pxr-icon-handle', PXR_THEME_URL . '/fonts/pxriconfont/pxriconfont.woff', array(), null);
+//    }
 
-   add_filter('style_loader_tag', 'pxr_font_loader_filter', 10, 2);
-}
+//    add_filter('style_loader_tag', 'pxr_font_loader_filter', 10, 2);
+// }
 
-if (!function_exists('pxr_font_loader_filter')) {
-   function pxr_font_loader_filter($html, $handle)
-   {
+// if (!function_exists('pxr_font_loader_filter')) {
+//    function pxr_font_loader_filter($html, $handle)
+//    {
 
-      $handles = array(
-         'pxr-icon-handle',
-      );
+//       $handles = array(
+//          'pxr-icon-handle',
+//       );
 
-      foreach ($handles as $font) {
-         if ($font === $handle) {
-            return str_replace(
-               "rel='stylesheet'",
-               "rel='preload' as='font' type='font/woff' crossorigin='anonymous'",
-               $html
-            );
-         }
-      }
-      return $html;
-   }
+//       foreach ($handles as $font) {
+//          if ($font === $handle) {
+//             return str_replace(
+//                "rel='stylesheet'",
+//                "rel='preload' as='font' type='font/woff' crossorigin='anonymous'",
+//                $html
+//             );
+//          }
+//       }
+//       return $html;
+//    }
 
-   add_action('wp_enqueue_scripts', 'pxr_preload_enqueue_scripts');
-}
+//    add_action('wp_enqueue_scripts', 'pxr_preload_enqueue_scripts');
+// }
 
 
 
-/**
- * ADD Defer to js
- */
-if (!function_exists('pxr_add_defer_attribute')) {
-   function pxr_add_defer_attribute($tag, $handle)
-   {
-      $handles = array(
-         'pxr-scripts',
-      );
+// /**
+//  * ADD Defer to js
+//  */
+// if (!function_exists('pxr_add_defer_attribute')) {
+//    function pxr_add_defer_attribute($tag, $handle)
+//    {
+//       $handles = array(
+//          'pxr-scripts',
+//       );
 
-      foreach ($handles as $defer_script) {
-         if ($defer_script === $handle) {
-            return str_replace(' src', ' defer="defer" src', $tag);
-         }
-      }
-      return $tag;
-   }
+//       foreach ($handles as $defer_script) {
+//          if ($defer_script === $handle) {
+//             return str_replace(' src', ' defer="defer" src', $tag);
+//          }
+//       }
+//       return $tag;
+//    }
 
-   add_filter('script_loader_tag', 'pxr_add_defer_attribute', 10, 2);
-}
+//    add_filter('script_loader_tag', 'pxr_add_defer_attribute', 10, 2);
+// }

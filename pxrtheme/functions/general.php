@@ -50,7 +50,6 @@ if (!function_exists('pxr_theme_slug_post_classes')) {
 /**
  * Init TGM Activation
  */
-
 add_action('tgmpa_register', 'pxr_register_required_plugins');
 if (!function_exists('pxr_register_required_plugins')) {
    function pxr_register_required_plugins()
@@ -122,13 +121,10 @@ if (!function_exists('pxr_theme_slug_setup')) {
 }
 
 
-
 /**
  * Register Sidebars
  */
-
 add_action('widgets_init', 'pxr_theme_sidebars');
-
 if (!function_exists('pxr_theme_sidebars')) {
    function pxr_theme_sidebars()
    {
@@ -163,10 +159,10 @@ if (!function_exists('pxr_theme_sidebars')) {
    }
 }
 
+
 /**
  * Use paginate_links()
  */
-
 if (!function_exists('pxr_check_escape')) {
    function pxr_check_escape($output = "", $esc = false)
    {
@@ -219,7 +215,6 @@ if (!function_exists('pxr_page_links')) {
 /**
  * Default comments
  */
-
 if (!function_exists('pxr_comment_default')) {
    function pxr_comment_default($comment, $args, $depth)
    {

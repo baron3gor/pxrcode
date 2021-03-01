@@ -1,10 +1,9 @@
 <?php
 
-/**
- * Javascript for Gallery Sorting
- *
- */
 
+/**
+ * JS CDATA Catalogue Sorting
+ */
 if (!function_exists('pxr_sorter_js')) {
    function pxr_sorter_js()
    {
@@ -12,23 +11,19 @@ if (!function_exists('pxr_sorter_js')) {
          'nonce'       => wp_create_nonce('pxr-sorter-nonce'),
          'url'         => admin_url('admin-ajax.php'),
       );
-      wp_enqueue_script(
-         'pxr-sorter',
-         get_stylesheet_directory_uri() . '/js/libs/sorter.js',
-         array('jquery'),
+      wp_enqueue_script( 'pxr-sorter-ctlg',
+         get_stylesheet_directory_uri() . '/js/libs/sorter-ctlg.js',
+         array( 'jquery' ),
          '1.0',
-         true
-      );
-      wp_localize_script('pxr-sorter', 'pxrsorter', $args);
+         true );
+
+      wp_localize_script('pxr-sorter-ctlg', 'pxrsorter', $args);
    }
    add_action('pxr_sorter_scripts', 'pxr_sorter_js');
 }
 
-
-
 /**
- * AJAX Load More
- *
+ * AJAX Catalogue Sorting
  */
 if (!function_exists('pxr_ajax_sorter')) {
    function pxr_ajax_sorter()
